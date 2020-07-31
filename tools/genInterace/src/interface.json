@@ -1,0 +1,37 @@
+{
+	"msg": "string",
+	"code": "number",
+	"注释1": "InformationStationListVO",
+	"data_Array": [
+		{
+			"注释2": "资料站ID",
+			"id": "number",
+			"注释3": "资料名称，必填",
+			"name": "string",
+			"注释4": "分公司ID",
+			"orgId": "number",
+			"注释5": "分公司名称",
+			"orgName": "string",
+			"注释6": "资料标签列表 ,String",
+			"informationLabelList": "string[]",
+			"注释7": "领取的人数",
+			"recieveNum": "number",
+			"注释8": "年级ID，逗号分隔",
+			"grade": "string",
+			"注释9": "年级名称列表 ,String",
+			"gradeList": "string[]",
+			"注释10": "科目ID，逗号分隔",
+			"subject": "string",
+			"注释11": "科目名称列表 ,String",
+			"subjectList": "string[]",
+			"注释12": "热点标签ID，逗号分隔",
+			"label": "string",
+			"注释13": "标签名称列表 ,String",
+			"labelList": "string[]",
+			"注释14": "上下架状态,ON_SHELVES(1,\"上架\"),,OFF_SHELVES(2,\"下架\");",
+			"status": "enum"
+		}
+	],
+	"requestId": "string",
+	"timestamp": "number"
+}

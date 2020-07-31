@@ -1,0 +1,22 @@
+{
+	"pageNo": "number",
+	"limit": "number",
+	"offset": "number",
+	"注释1": "InformationListQueryDTO",
+	"data": {
+		"注释2": "资料站名称",
+		"name": "string",
+		"注释3": "分公司ID列表 ,Long",
+		"orgIds": "number[]",
+		"注释4": "年级ID列表 ,Long",
+		"gradeIds": "number[]",
+		"注释5": "科目ID列表 ,Long",
+		"subjectIds": "number[]",
+		"注释6": "上架状态，ON_SHELVES：上架，OFF_SHELVES下架",
+		"status": "enum",
+		"注释7": "ID列表 ,Long",
+		"ids": "number[]",
+		"注释8": "排除的ID列表 ,Long",
+		"excludeIdList": "number[]"
+	}
+}

@@ -1,0 +1,135 @@
+{
+	"type": "object",
+	"title": "Response<List<InformationStationListVO>>",
+	"required": [],
+	"description": "Response<List<InformationStationListVO>> :Response",
+	"properties": {
+		"msg": {
+			"type": "String",
+			"mock": {
+				"mock": "@string"
+			}
+		},
+		"code": {
+			"type": "Integer",
+			"mock": {
+				"mock": "@integer"
+			}
+		},
+		"data": {
+			"type": "array",
+			"description": "InformationStationListVO",
+			"items": {
+				"type": "object",
+				"description": "InformationStationListVO",
+				"properties": {
+					"id": {
+						"type": "Long",
+						"description": "资料站ID",
+						"mock": {
+							"mock": "@integer"
+						}
+					},
+					"name": {
+						"type": "String",
+						"description": "资料名称，必填",
+						"mock": {
+							"mock": "@string"
+						}
+					},
+					"orgId": {
+						"type": "Long",
+						"description": "分公司ID",
+						"mock": {
+							"mock": "@integer"
+						}
+					},
+					"orgName": {
+						"type": "String",
+						"description": "分公司名称",
+						"mock": {
+							"mock": "@string"
+						}
+					},
+					"informationLabelList": {
+						"type": "array",
+						"description": "资料标签列表 ,String",
+						"items": {
+							"type": "String",
+							"description": "资料标签列表"
+						}
+					},
+					"recieveNum": {
+						"type": "Integer",
+						"description": "领取的人数",
+						"mock": {
+							"mock": "@integer"
+						}
+					},
+					"grade": {
+						"type": "String",
+						"description": "年级ID，逗号分隔",
+						"mock": {
+							"mock": "@string"
+						}
+					},
+					"gradeList": {
+						"type": "array",
+						"description": "年级名称列表 ,String",
+						"items": {
+							"type": "String",
+							"description": "年级名称列表"
+						}
+					},
+					"subject": {
+						"type": "String",
+						"description": "科目ID，逗号分隔",
+						"mock": {
+							"mock": "@string"
+						}
+					},
+					"subjectList": {
+						"type": "array",
+						"description": "科目名称列表 ,String",
+						"items": {
+							"type": "String",
+							"description": "科目名称列表"
+						}
+					},
+					"label": {
+						"type": "String",
+						"description": "热点标签ID，逗号分隔",
+						"mock": {
+							"mock": "@string"
+						}
+					},
+					"labelList": {
+						"type": "array",
+						"description": "标签名称列表 ,String",
+						"items": {
+							"type": "String",
+							"description": "标签名称列表"
+						}
+					},
+					"status": {
+						"type": "enum",
+						"description": "上下架状态,ON_SHELVES(1,\"上架\"),,OFF_SHELVES(2,\"下架\");"
+					}
+				},
+				"required": []
+			}
+		},
+		"requestId": {
+			"type": "String",
+			"mock": {
+				"mock": "@string"
+			}
+		},
+		"timestamp": {
+			"type": "Long",
+			"mock": {
+				"mock": "@integer"
+			}
+		}
+	}
+}
