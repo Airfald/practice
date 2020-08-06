@@ -36,6 +36,86 @@ https://github.com/jackfrued/Python-100-Days/blob/master/%E5%85%AC%E5%BC%80%E8%A
 
 
 
+<!-- Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home -->
+
+参考:
+https://www.selenium.dev/documentation/en/webdriver/web_element/
+https://sites.google.com/a/chromium.org/chromedriver/downloads
+https://selenium-python-zh.readthedocs.io
+
+1. 直接爬取页面
+2. 爬取接口
+3. selenium 爬取页面
+
+driver.get 方法将打开URL中填写的地址，WebDriver 将等待， 直到页面完全加载完毕（其实是等到”onload” 方法执行完毕），然后返回继续执行你的脚本。 值得注意的是，如果你的页面使用了大量的Ajax加载， WebDriver可能不知道什么时候页面已经完全加载:
+
+```
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+def main():
+    driver = webdriver.Chrome('./extend/chromedriver')
+    driver.get('https://v.taobao.com/v/content/live?catetype=704&from=taonvlang')
+    soup = BeautifulSoup(driver.page_source, 'lxml')
+    for img_tag in soup.body.select('img[src]'):
+        print(img_tag.attrs['src'])
+
+if __name__ == '__main__':
+    main()
+```
+
+
+出现Read timed out这个错误。经查是由于python在安装三方库时设置的时间限制。
+1. 
+```
+一般我们使用的命令为：
+pip install XXXX（XXXX为你即将要安装的三方库）
+此时可能会出现以下错误：
+Read timed out
+这是的解决办法为：
+pip –default-timeout=100 install -U XXXX即可完成安装;
+```
+
+2. 使用国内源即可: 详细参考： https://cloud.tencent.com/developer/article/1520882
+```
+一般情况下PIP出现ReadTimeoutError都是因为被GFW给墙了，所以一般遇到这种问题，我们可以选择国内的镜像来解决问题。
+
+在Windows下：
+
+C:\Users\Administrator\下新建pip文件夹，在创建pip.ini文件，拷贝下面代码进去，保存。
+
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+下载神器：
+
+安装文件时出现各种错误： 
+1. 通过下面网址直接下载包到本地
+https://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+比如：先下载到本地
+Twisted‑20.3.0‑cp38‑cp38‑win_amd64.whl
+
+2. pip install [自己的文件的本地地址]
+
+pip install D:\download_soft\pyPlugin\Scrapy-2.2.1-py3-none-any.whl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
