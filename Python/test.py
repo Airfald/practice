@@ -1,14 +1,16 @@
-from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver import ActionChains
+import time
 
+browser = webdriver.Chrome()
+url = 'http://www.runoob.com/try/try.php?filename=jqueryui-api-droppable'
+browser.get(url)
+browser.switch_to.frame('iframeResult')
+source = browser.find_element_by_css_selector('#draggable')
+target = browser.find_element_by_css_selector('#droppable')
+actions = ActionChains(browser)
+actions.drag_and_drop(source, target)
+actions.perform()
 
-def main():
-    driver = webdriver.Chrome('./extend/chromedriver')
-    driver.get('https://www.baidu.com/')
-    soup = BeautifulSoup(driver.page_source, 'lxml')
-    for img_tag in soup.body.select('img[src]'):
-        print(img_tag.attrs['src'])
-
-if __name__ == '__main__':
-    main()
+time.sleep(10)
+browser.close()
