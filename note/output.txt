@@ -1,0 +1,78 @@
+== Info:   Trying 183.232.231.172:80...
+== Info: TCP_NODELAY set
+== Info: Connected to www.baidu.com (183.232.231.172) port 80 (#0)
+=> Send header, 77 bytes (0x4d)
+0000: GET / HTTP/1.1
+0010: Host: www.baidu.com
+0025: User-Agent: curl/7.65.3
+003e: Accept: */*
+004b: 
+== Info: Mark bundle as not supporting multiuse
+<= Recv header, 17 bytes (0x11)
+0000: HTTP/1.1 200 OK
+<= Recv header, 22 bytes (0x16)
+0000: Accept-Ranges: bytes
+<= Recv header, 76 bytes (0x4c)
+0000: Cache-Control: private, no-cache, no-store, proxy-revalidate, no
+0040: -transform
+<= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+<= Recv header, 22 bytes (0x16)
+0000: Content-Length: 2381
+<= Recv header, 25 bytes (0x19)
+0000: Content-Type: text/html
+<= Recv header, 37 bytes (0x25)
+0000: Date: Fri, 07 Aug 2020 03:45:04 GMT
+<= Recv header, 22 bytes (0x16)
+0000: Etag: "588604ec-94d"
+<= Recv header, 46 bytes (0x2e)
+0000: Last-Modified: Mon, 23 Jan 2017 13:28:12 GMT
+<= Recv header, 18 bytes (0x12)
+0000: Pragma: no-cache
+<= Recv header, 22 bytes (0x16)
+0000: Server: bfe/1.0.8.18
+<= Recv header, 67 bytes (0x43)
+0000: Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=
+0040: /
+<= Recv header, 2 bytes (0x2)
+0000: 
+<= Recv data, 2381 bytes (0x94d)
+0000: <!DOCTYPE html>
+0011: <!--STATUS OK--><html> <head><meta http-equiv=content-type conte
+0051: nt=text/html;charset=utf-8><meta http-equiv=X-UA-Compatible cont
+0091: ent=IE=Edge><meta content=always name=referrer><link rel=stylesh
+00d1: eet type=text/css href=http://s1.bdstatic.com/r/www/cache/bdorz/
+0111: baidu.min.css><title>...........................</title></head> 
+0151: <body link=#0000cc> <div id=wrapper> <div id=head> <div class=he
+0191: ad_wrapper> <div class=s_form> <div class=s_form_wrapper> <div i
+01d1: d=lg> <img hidefocus=true src=//www.baidu.com/img/bd_logo1.png w
+0211: idth=270 height=129> </div> <form id=form name=f action=//www.ba
+0251: idu.com/s class=fm> <input type=hidden name=bdorz_come value=1> 
+0291: <input type=hidden name=ie value=utf-8> <input type=hidden name=
+02d1: f value=8> <input type=hidden name=rsv_bp value=1> <input type=h
+0311: idden name=rsv_idx value=1> <input type=hidden name=tn value=bai
+0351: du><span class="bg s_ipt_wr"><input id=kw name=wd class=s_ipt va
+0391: lue maxlength=255 autocomplete=off autofocus></span><span class=
+03d1: "bg s_btn_wr"><input type=submit id=su value=............ class=
+0411: "bg s_btn"></span> </form> </div> </div> <div id=u1> <a href=htt
+0451: p://news.baidu.com name=tj_trnews class=mnav>......</a> <a href=
+0491: http://www.hao123.com name=tj_trhao123 class=mnav>hao123</a> <a 
+04d1: href=http://map.baidu.com name=tj_trmap class=mnav>......</a> <a
+0511:  href=http://v.baidu.com name=tj_trvideo class=mnav>......</a> <
+0551: a href=http://tieba.baidu.com name=tj_trtieba class=mnav>......<
+0591: /a> <noscript> <a href=http://www.baidu.com/bdorz/login.gif?logi
+05d1: n&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d
+0611: 1 name=tj_login class=lb>......</a> </noscript> <script>document
+0651: .write('<a href="http://www.baidu.com/bdorz/login.gif?login&tpl=
+0691: mn&u='+ encodeURIComponent(window.location.href+ (window.locatio
+06d1: n.search === "" ? "?" : "&")+ "bdorz_come=1")+ '" name="tj_login
+0711: " class="lb">......</a>');</script> <a href=//www.baidu.com/more
+0751: / name=tj_briicon class=bri style="display: block;">............
+0791: </a> </div> </div> </div> <div id=ftCon> <div id=ftConw> <p id=l
+07d1: h> <a href=http://home.baidu.com>............</a> <a href=http:/
+0811: /ir.baidu.com>About Baidu</a> </p> <p id=cp>&copy;2017&nbsp;Baid
+0851: u&nbsp;<a href=http://www.baidu.com/duty/>.....................<
+0891: /a>&nbsp; <a href=http://jianyi.baidu.com/ class=cp-feedback>...
+08d1: .........</a>&nbsp;...ICP...030173...&nbsp; <img src=//www.baidu
+0911: .com/img/gs.gif> </p> </div> </div> </div> </body> </html>
+== Info: Connection #0 to host www.baidu.com left intact

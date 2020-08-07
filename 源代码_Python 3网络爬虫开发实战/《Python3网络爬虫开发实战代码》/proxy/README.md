@@ -1,2 +1,0 @@
-# ProxySettings
-Proxy Settings

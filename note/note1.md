@@ -102,20 +102,76 @@ Twisted‑20.3.0‑cp38‑cp38‑win_amd64.whl
 
 pip install D:\download_soft\pyPlugin\Scrapy-2.2.1-py3-none-any.whl
 
+### 关于wheel
+
+wheel是Python的一种安装包，其后缀为.whl，在网速较差的情况下可以选择下载wheel文件再安装，然后直接用pip3命令加文件名安装即可。
+
+不过在这之前需要先安装wheel库，安装命令如下：
+
+```
+pip3 install wheel
+1
+pip3 install wheel
+```
+
+(也可以直接通过https://www.lfd.uci.edu/~gohlke/pythonlibs/来下载)
+然后到PyPI上下载对应的wheel文件，如最新版本为2.17.3，则打开https://pypi.python.org/pypi/requests/2.17.3#downloads，下载requests-2.17.3-py2.py3-none-any.whl到本地。
+
+随后在命令行界面进入wheel文件目录，利用pip安装即可：
+
+pip3 install requests-2.17.3-py2.py3-none-any.whl
+1
+pip3 install requests-2.17.3-py2.py3-none-any.whl
+这样我们也可以完成Requests的安装。
+
+## 源码安装
+
+可以通过Git来下载源代码：
+
+```
+git clone git://github.com/kennethreitz/requests.git
+
+git clone git://github.com/kennethreitz/requests.git
+```
+
+下载下来之后，进入目录，执行如下命令即可安装：
+```
+cd requests
+python3 setup.py install
+cd requests
+python3 setup.py install
+```
+
+
+## 使用Scrapy
+
+### 基本命令
+
+
+参考: https://scrapy-chs.readthedocs.io/zh_CN/0.24/topics/commands.html
+```
+创建项目
+一般来说，使用 scrapy 工具的第一件事就是创建您的Scrapy项目:
+
+scrapy startproject myproject
+该命令将会在 myproject 目录中创建一个Scrapy项目。在您的项目中使用 scrapy 工具来对其进行控制和管理。
+
+比如，创建一个新的spider:
+
+scrapy genspider mydomain mydomain.com
+
+scrapy crawl myspider
+```
+
+### curl
+官网: https://curl.haxx.se/docs/
+https://catonmat.net/cookbooks/curl
+参考:
+https://www.ruanyifeng.com/blog/2019/09/curl-reference.html
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+安装完成后，我们可以在“计算机”→“管理”→“服务”页面开启和关闭MySQL服务
 
 
 

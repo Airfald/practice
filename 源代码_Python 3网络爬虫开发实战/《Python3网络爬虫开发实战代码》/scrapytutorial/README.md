@@ -1,2 +1,0 @@
-# ScrapyTutorial
-Scrapy Tutorial

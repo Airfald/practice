@@ -1,4 +1,4 @@
-# 参考: https://openpyxl.readthedocs.io/en/stable/tutorial.html#create-a-workbook
+# 参考: https://openpyxl.readthedocs.io/en/stable/tutorial.html
 import datetime
 from openpyxl import Workbook
 
@@ -125,8 +125,4 @@ init()
 # >>> ws.insert_rows(7)
 # >>> ws.delete_cols(6, 3)
 # >>> ws.move_range("D4:F10", rows=-1, cols=2)
-
-
-
-
 

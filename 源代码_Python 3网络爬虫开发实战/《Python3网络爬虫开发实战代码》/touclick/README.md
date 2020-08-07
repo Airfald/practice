@@ -1,2 +1,0 @@
-# CrackTouClick
-Crack Touch Click

@@ -1,2 +1,0 @@
-# ScrapyCrawlSpiderTest
-Scrapy Universal Spider
