@@ -171,17 +171,32 @@ https://www.ruanyifeng.com/blog/2019/09/curl-reference.html
 
 
 
+
+curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=021da76b-fa03-4776-bf9e-46b215176137' \
+   -H 'Content-Type: application/json' \
+   -d '
+    {
+        "msgtype": "text",
+        "text": {
+            "content": "广州今日天气：29度，大部分多云，降雨概率：60%",
+            "mentioned_list":["wangqing","@all"],
+            "mentioned_mobile_list":["13800001111","@all"]
+        }
+    }'
+
+
+curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=693axxx6-7aoc-4bc4-97a0-0ec2sifa5aaa' \
+   -H 'Content-Type: application/json' \
+   -d '
+   {
+        "msgtype": "text",
+        "text": {
+            "content": "hello world"
+        }
+   }'
+
+
 安装完成后，我们可以在“计算机”→“管理”→“服务”页面开启和关闭MySQL服务
-
-
-
-
-
-
-
-
-
-
 
 
 

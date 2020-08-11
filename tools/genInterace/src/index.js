@@ -68,25 +68,18 @@ function getInterfaceData (id) {
 //toString()里可以不加utf8
 // console.log("data.toString():", data.toString());
 function genInterfaceFromFile () {
-    fs.readFile('./data.json',function(err,data){
-        if(err){
-            console.log('err');
-        }
-
+    try {
+        const data = fs.readFileSync('./data.json', 'utf8')
         let sourceData = {
             data: JSON.parse(data.toString())
         }
-
         resetData()
         genInterface(sourceData, interface)
     
-        fs.writeFile('./interface.json', JSON.stringify(interface.data, null, '\t'), 'utf8', function(err){
-            if(err)
-                console.log('写文件出错了，错误是：'+ err);
-            else
-                console.log('生成成功');
-        })
-    })
+        fs.writeFileSync('./interface.json', JSON.stringify(interface.data, null, '\t'), 'utf8')
+    } catch(err) {
+        console.error(err)
+    }
 }
 
 // 生成参数 - 同理调用genInterface
@@ -98,12 +91,11 @@ function genParams (params) {
     resetData()
     genInterface(sourceData, paramsResult)
 
-    fs.writeFile('./params.json', JSON.stringify(paramsResult.data, null, '\t'), 'utf8', function(err){
-        if(err)
-            console.log('写文件出错了，错误是：'+ err);
-        else
-            console.log('生成 params 成功');
-    })
+    try {
+        fs.writeFileSync('./params.json', JSON.stringify(paramsResult.data, null, '\t'), 'utf8')
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 // 递归生成interface代码 
