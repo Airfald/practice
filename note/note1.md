@@ -198,5 +198,3 @@ curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=693axxx6-7aoc-4bc4-97
 
 安装完成后，我们可以在“计算机”→“管理”→“服务”页面开启和关闭MySQL服务
 
-
-
