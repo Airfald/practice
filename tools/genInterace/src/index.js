@@ -10,8 +10,6 @@ const baseUrl = 'http://47.106.118.192:13000/api/interface/get'
 let interface = {}
 // 生成的参数
 let paramsResult = {}
-// 注释 count
-let commentCount = 0
 
 // 接口的 id
 getInterfaceData (27058)
@@ -45,35 +43,24 @@ function getInterfaceData (id) {
 
         if (!error && response.statusCode == 200) {
           const info = JSON.parse(data.data.res_body);
-          
-          //   生成返回值
-          fs.writeFile('./data.json', JSON.stringify(info, null, '\t'), 'utf8', function(err){
-              if (err) {
-                  console.log('写文件出错了，错误是：'+err);
-              } else {
-                  genInterfaceFromFile()
-              }
-          })
+          let sourceParamsData = {
+            data: JSON.parse(data.data.req_body_other)
+          }
 
-          genParams(JSON.parse(data.data.req_body_other))
+          fs.writeFileSync('./data.json', JSON.stringify(info, null, '\t'), 'utf8')
+          genParams(sourceParamsData)
+          genInterfaceFromFile()
         }
       }
 }
 
 // 通过读写文件的方式来生成
-//data参数的数据类型是Buffer对象，里面保存的是一个个字节（理解为字节组）
-// console.log("data:",data);
-//把Buffer对象转换为字符串，调用toString(utf8)方法
-// console.log("data.toString('utf8'):",data.toString('utf8'));
-//toString()里可以不加utf8
-// console.log("data.toString():", data.toString());
 function genInterfaceFromFile () {
     try {
         const data = fs.readFileSync('./data.json', 'utf8')
         let sourceData = {
             data: JSON.parse(data.toString())
         }
-        resetData()
         genInterface(sourceData, interface)
     
         fs.writeFileSync('./interface.json', JSON.stringify(interface.data, null, '\t'), 'utf8')
@@ -84,11 +71,6 @@ function genInterfaceFromFile () {
 
 // 生成参数 - 同理调用genInterface
 function genParams (params) {
-    let sourceData = {
-        data: params
-    }
-
-    resetData()
     genInterface(sourceData, paramsResult)
 
     try {
@@ -132,21 +114,3 @@ const genInterface = (data, interfaceItem, needComment = true) => {
 function genComment(dataItem, interfaceItem) {
     dataItem.description && (interfaceItem[`注释${commentCount++}`] = dataItem.description)
 }
-
-function resetData() {
-    commentCount = 0
-}
-
-
-
-
-
-test('abc').xxx
-test('abc', item => {
-
-})
-
-
-
-
-
