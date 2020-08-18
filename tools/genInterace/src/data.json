@@ -1,131 +1,230 @@
 {
 	"type": "object",
-	"title": "Response<List<InformationStationListVO>>",
+	"title": "Response<Page<CallRecordVo>>",
 	"required": [],
-	"description": "Response<List<InformationStationListVO>> :Response",
+	"description": "Response<Page<CallRecordVo>> :Response",
 	"properties": {
-		"msg": {
-			"type": "String",
-			"mock": {
-				"mock": "@string"
-			}
+		"SUCCESS": {
+			"type": "Response",
+			"description": "Response"
 		},
-		"code": {
-			"type": "Integer",
+		"resultCode": {
+			"type": "int",
 			"mock": {
 				"mock": "@integer"
 			}
 		},
-		"data": {
-			"type": "array",
-			"description": "InformationStationListVO",
-			"items": {
-				"type": "object",
-				"description": "InformationStationListVO",
-				"properties": {
-					"id": {
-						"type": "Long",
-						"description": "资料站ID",
-						"mock": {
-							"mock": "@integer"
-						}
-					},
-					"name": {
-						"type": "String",
-						"description": "资料名称，必填",
-						"mock": {
-							"mock": "@string"
-						}
-					},
-					"orgId": {
-						"type": "Long",
-						"description": "分公司ID",
-						"mock": {
-							"mock": "@integer"
-						}
-					},
-					"orgName": {
-						"type": "String",
-						"description": "分公司名称",
-						"mock": {
-							"mock": "@string"
-						}
-					},
-					"informationLabelList": {
-						"type": "array",
-						"description": "资料标签列表 ,String",
-						"items": {
-							"type": "String",
-							"description": "资料标签列表"
-						}
-					},
-					"recieveNum": {
-						"type": "Integer",
-						"description": "领取的人数",
-						"mock": {
-							"mock": "@integer"
-						}
-					},
-					"grade": {
-						"type": "String",
-						"description": "年级ID，逗号分隔",
-						"mock": {
-							"mock": "@string"
-						}
-					},
-					"gradeList": {
-						"type": "array",
-						"description": "年级名称列表 ,String",
-						"items": {
-							"type": "String",
-							"description": "年级名称列表"
-						}
-					},
-					"subject": {
-						"type": "String",
-						"description": "科目ID，逗号分隔",
-						"mock": {
-							"mock": "@string"
-						}
-					},
-					"subjectList": {
-						"type": "array",
-						"description": "科目名称列表 ,String",
-						"items": {
-							"type": "String",
-							"description": "科目名称列表"
-						}
-					},
-					"label": {
-						"type": "String",
-						"description": "热点标签ID，逗号分隔",
-						"mock": {
-							"mock": "@string"
-						}
-					},
-					"labelList": {
-						"type": "array",
-						"description": "标签名称列表 ,String",
-						"items": {
-							"type": "String",
-							"description": "标签名称列表"
-						}
-					},
-					"status": {
-						"type": "enum",
-						"description": "上下架状态,ON_SHELVES(1,\"上架\"),,OFF_SHELVES(2,\"下架\");"
-					}
-				},
-				"required": []
-			}
-		},
-		"requestId": {
+		"resultMessage": {
 			"type": "String",
 			"mock": {
 				"mock": "@string"
 			}
 		},
-		"timestamp": {
+		"data": {
+			"type": "object",
+			"description": "Page",
+			"properties": {
+				"pageNum": {
+					"type": "int",
+					"mock": {
+						"mock": "@integer"
+					}
+				},
+				"pageSize": {
+					"type": "int",
+					"mock": {
+						"mock": "@integer"
+					}
+				},
+				"total": {
+					"type": "long",
+					"mock": {
+						"mock": "@integer"
+					}
+				},
+				"list": {
+					"type": "array",
+					"description": "T",
+					"items": {
+						"type": "object",
+						"description": "T",
+						"properties": {
+							"id": {
+								"type": "Long",
+								"description": "ID",
+								"mock": {
+									"mock": "@integer"
+								}
+							},
+							"callId": {
+								"type": "String",
+								"description": "第三方呼叫记录ID",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"agentId": {
+								"type": "String",
+								"description": "座席id",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"agentName": {
+								"type": "String",
+								"description": "坐席名称",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"followupId": {
+								"type": "String",
+								"description": "跟进记录ID",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"organizationId": {
+								"type": "String",
+								"description": "组织机构ID",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"organizationName": {
+								"type": "String",
+								"description": "组织机构名",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"callDirection": {
+								"type": "String",
+								"description": "呼叫类型，0（呼入），1（呼出）",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"callFlag": {
+								"type": "String",
+								"description": "接听标识0：未接听，1：已接听",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"callWay": {
+								"type": "String",
+								"description": "Sip登录方式1：网页电话，2：sip话机，3：手机",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"caller": {
+								"type": "String",
+								"description": "主叫号码",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"callee": {
+								"type": "String",
+								"description": "被叫号码",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"recordUrl": {
+								"type": "String",
+								"description": "第三方通话记录录音地址",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"bossRecordUrl": {
+								"type": "String",
+								"description": "boss保存通话记录录音地址",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"duration": {
+								"type": "String",
+								"description": "录音时长",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"ender": {
+								"type": "String",
+								"description": "挂断方系统超时挂断,1客服挂断,2客户挂断增加3-转接挂断、4-强拆挂断、5-第三方挂断",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"callResult": {
+								"type": "String",
+								"description": "通话结果,10.坐席接听11.振铃未接听12.ivr放弃13.排队放弃14.非服务时间来电15.呼入话机异常16.呼入网络异常17.排队超时18.客户速挂,20.客户接听21.客户未接听25.呼出话机异常26.呼出网络异常781.客户拒接774.号码空号770.客户关机771.客户停机772.暂时无法接通,773.客户正在通话30第三方接听、31第三方无法接通（所有其他的因素）、32第三方振铃未接听（包括长时间无应答、第三方拒接）",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"createTime": {
+								"type": "Date",
+								"description": "创建时间",
+								"mock": {
+									"mock": "@timestamp"
+								}
+							},
+							"customerId": {
+								"type": "String",
+								"description": "客户ID",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"customerName": {
+								"type": "String",
+								"description": "客户名称",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"studentId": {
+								"type": "String",
+								"description": "学生ID",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"studentName": {
+								"type": "String",
+								"description": "学生姓名",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"userId": {
+								"type": "String",
+								"description": "boss用户",
+								"mock": {
+									"mock": "@string"
+								}
+							},
+							"userName": {
+								"type": "String",
+								"description": "boss用户",
+								"mock": {
+									"mock": "@string"
+								}
+							}
+						},
+						"required": []
+					}
+				}
+			},
+			"required": []
+		},
+		"timeStamp": {
 			"type": "Long",
 			"mock": {
 				"mock": "@integer"

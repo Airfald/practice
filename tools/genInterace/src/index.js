@@ -2,17 +2,18 @@ const fs = require('fs');
 const request  = require('request');
 
 // 通过登录拿到yapi token
-const token = '_yapi_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE1MzcsImlhdCI6MTU5NTQ5MzQ4MCwiZXhwIjoxNTk2MDk4MjgwfQ.BdBa6KBCdXD0c-0Mot58MHwtBcdbapQcyDWIcye6MaA; _yapi_uid=1537'
+const token = '_yapi_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE1MzcsImlhdCI6MTU5NzEzNjU4OSwiZXhwIjoxNTk3NzQxMzg5fQ.fv9jXk6_aidZHgEqmRtX-Z4KAPGQLzyC2ffJphqkHDw; _yapi_uid=1537'
 // 部署的域名
 const baseUrl = 'http://47.106.118.192:13000/api/interface/get'
 
-// 生成的interface
-let interface = {}
+const urlId = 30092
+
+let count = 0
+
 // 生成的参数
 let paramsResult = {}
-
-// 接口的 id
-getInterfaceData (27058)
+// 生成的interface
+let responseResult = {}
 
 const JAVA_TO_JS_TYPE_MAP = {
     String: 'string',
@@ -27,10 +28,11 @@ const JAVA_TO_JS_TYPE_MAP = {
     Boolean: 'boolean'
 }
 
+// 接口的 id
+getInterfaceData(urlId)
+
 // 需要登录拿到cookie
 function getInterfaceData (id) {
-    request(options, callback);
-
     const options = {
         url: `${baseUrl}?id=${id}`,
         headers: {
@@ -47,30 +49,37 @@ function getInterfaceData (id) {
             data: JSON.parse(data.data.req_body_other)
           }
 
+          // 保存请求原数据  
           fs.writeFileSync('./data.json', JSON.stringify(info, null, '\t'), 'utf8')
+          // 生成参数  
           genParams(sourceParamsData)
-          genInterfaceFromFile()
+          // 生成interface  
+          genResponse()
         }
       }
+
+      request(options, callback);
 }
 
 // 通过读写文件的方式来生成
-function genInterfaceFromFile () {
+function genResponse () {
     try {
         const data = fs.readFileSync('./data.json', 'utf8')
         let sourceData = {
             data: JSON.parse(data.toString())
         }
-        genInterface(sourceData, interface)
+        reset()
+        genInterface(sourceData, responseResult)
     
-        fs.writeFileSync('./interface.json', JSON.stringify(interface.data, null, '\t'), 'utf8')
+        fs.writeFileSync('./interface.json', JSON.stringify(responseResult.data, null, '\t'), 'utf8')
     } catch(err) {
         console.error(err)
     }
 }
 
 // 生成参数 - 同理调用genInterface
-function genParams (params) {
+function genParams (sourceData) {
+    reset()
     genInterface(sourceData, paramsResult)
 
     try {
@@ -112,5 +121,9 @@ const genInterface = (data, interfaceItem, needComment = true) => {
 
 // 生成注释
 function genComment(dataItem, interfaceItem) {
-    dataItem.description && (interfaceItem[`注释${commentCount++}`] = dataItem.description)
+    dataItem.description && (interfaceItem[`注释${count++}`] = dataItem.description)
+}
+
+function reset () {
+    count = 0
 }
