@@ -3,12 +3,6 @@
 
 ### 目录树
 ```
-practice
-├── note
-│   └── note1.md
-├── python
-│   └── interal.py
-├── README.md
 └── tools
     └── genInterace
         ├── genInterace.rar
