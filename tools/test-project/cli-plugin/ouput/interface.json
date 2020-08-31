@@ -1,0 +1,21 @@
+{
+	"msg": "string",
+	"code": "number",
+	"注释1": "ShortUrlExtVO",
+	"data": {
+		"注释2": "原链是否已经存在短链",
+		"exsit": "boolean",
+		"注释3": "短链标题",
+		"title": "string",
+		"注释4": "短链",
+		"shortUrl": "string",
+		"注释5": "原始链接",
+		"originUrl": "string",
+		"注释6": "短链的ID",
+		"id": "number",
+		"注释7": "二维码样式",
+		"configJson": "string"
+	},
+	"requestId": "string",
+	"timestamp": "number"
+}

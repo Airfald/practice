@@ -1,0 +1,81 @@
+{
+	"type": "object",
+	"title": "Response<ShortUrlExtVO>",
+	"required": [],
+	"description": "Response<ShortUrlExtVO> :Response",
+	"properties": {
+		"msg": {
+			"type": "String",
+			"mock": {
+				"mock": "@string"
+			}
+		},
+		"code": {
+			"type": "Integer",
+			"mock": {
+				"mock": "@integer"
+			}
+		},
+		"data": {
+			"type": "object",
+			"description": "ShortUrlExtVO",
+			"properties": {
+				"exsit": {
+					"type": "Boolean",
+					"description": "原链是否已经存在短链",
+					"mock": {
+						"mock": "@boolean"
+					}
+				},
+				"title": {
+					"type": "String",
+					"description": "短链标题",
+					"mock": {
+						"mock": "@string"
+					}
+				},
+				"shortUrl": {
+					"type": "String",
+					"description": "短链",
+					"mock": {
+						"mock": "@string"
+					}
+				},
+				"originUrl": {
+					"type": "String",
+					"description": "原始链接",
+					"mock": {
+						"mock": "@string"
+					}
+				},
+				"id": {
+					"type": "Long",
+					"description": "短链的ID",
+					"mock": {
+						"mock": "@integer"
+					}
+				},
+				"configJson": {
+					"type": "String",
+					"description": "二维码样式",
+					"mock": {
+						"mock": "@string"
+					}
+				}
+			},
+			"required": []
+		},
+		"requestId": {
+			"type": "String",
+			"mock": {
+				"mock": "@string"
+			}
+		},
+		"timestamp": {
+			"type": "Long",
+			"mock": {
+				"mock": "@integer"
+			}
+		}
+	}
+}

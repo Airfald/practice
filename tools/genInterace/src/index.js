@@ -1,3 +1,7 @@
+/**
+ * 通过yapi生成interface的辅助脚本
+ */
+
 const fs = require('fs');
 const request  = require('request');
 
