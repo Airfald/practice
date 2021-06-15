@@ -1,0 +1,46 @@
+Arguments: 
+  D:\download_soft\nodejs\node.exe C:\Users\XJY\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add Wechaty
+
+PATH: 
+  D:\download_soft\Git\mingw64\bin;D:\download_soft\Git\usr\bin;C:\Users\XJY\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\download_soft\Git\cmd;D:\download_soft\Microsoft VS Code\bin;D:\download_soft\nodejs;D:\download_soft\Python\Scripts;D:\download_soft\Python;C:\Users\XJY\AppData\Local\Microsoft\WindowsApps;?D;D:\download_soft\Git\download_soft\jdk\bi;?D;D:\download_soft\Git\download_soft\jdk\jre\bin;.;D:\download_soft\jdk\bin;?C;D:\download_soft\Git\Program Files\MySQL\MySQL Server 8.0\bin;D:\download_soft\nvm\nvm;D:\download_soft\nvm;D:\download_soft\fiddler;C:\Users\XJY\AppData\Roaming\npm;C:\Users\XJY\AppData\Local\Google\Chrome\Application;D:\download_soft\Git\usr\bin;C:\Users\XJY\AppData\Local\Microsoft\WindowsApps
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.18.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npm.taobao.org/Wechaty: Not found
+      at Request.params.callback [as _callback] (C:\Users\XJY\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
+      at Request.self.callback (C:\Users\XJY\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Users\XJY\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Users\XJY\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (_stream_readable.js:1221:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "wechat_robot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

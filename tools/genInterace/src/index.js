@@ -6,11 +6,11 @@ const fs = require('fs');
 const request  = require('request');
 
 // 通过登录拿到yapi token
-const token = '_yapi_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE1MzcsImlhdCI6MTU5NzEzNjU4OSwiZXhwIjoxNTk3NzQxMzg5fQ.fv9jXk6_aidZHgEqmRtX-Z4KAPGQLzyC2ffJphqkHDw; _yapi_uid=1537'
+const token = 'jenkins-timestamper-offset=-28800000; _yapi_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE1MzcsImlhdCI6MTYyMDQ1MzE5OSwiZXhwIjoxNjIxMDU3OTk5fQ.JqBZqSoVsDI8zbgDxVsQCKfCfVfyLDIbtbHmyhKbmaY; _yapi_uid=1537'
 // 部署的域名
 const baseUrl = 'http://47.106.118.192:13000/api/interface/get'
 
-const urlId = 30092
+const urlId = 51484
 
 let count = 0
 
@@ -20,16 +20,16 @@ let paramsResult = {}
 let responseResult = {}
 
 const JAVA_TO_JS_TYPE_MAP = {
-    String: 'string',
-    Date: 'string',
+    string: 'string',
+    date: 'string',
     object: 'object',
-    Integer: 'number',
+    integer: 'number',
     int: 'number',
-    Long: 'number',
+    long: 'number',
     number: 'number',
     array: 'Array',
     enum: 'enum',
-    Boolean: 'boolean'
+    boolean: 'boolean'
 }
 
 // 接口的 id
@@ -108,7 +108,7 @@ const genInterface = (data, interfaceItem, needComment = true) => {
         } else if (type === 'array') {
             if (data[key].items.type !== 'object') {
                 needComment && genComment(data[key], interfaceItem)
-                interfaceItem[key] = `${JAVA_TO_JS_TYPE_MAP[data[key].items.type]}[]` || 'unknow'
+                interfaceItem[key] = `${JAVA_TO_JS_TYPE_MAP[data[key].items.type.toLocaleLowerCase()]}[]` || 'unknow'
             } else {
                 let propertyName = `${key}_Array`
                 needComment && genComment(data[key], interfaceItem)
@@ -118,7 +118,7 @@ const genInterface = (data, interfaceItem, needComment = true) => {
             }
         } else {
             needComment && genComment(data[key], interfaceItem)
-            interfaceItem[key] = JAVA_TO_JS_TYPE_MAP[type] || 'unknow'
+            interfaceItem[key] = JAVA_TO_JS_TYPE_MAP[type.toLocaleLowerCase()] || 'unknow'
         }
     }
 }
